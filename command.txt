@@ -1,0 +1,445 @@
+    1  apt-get update -y
+    2  ping 8.8.8.8
+    3  apt-get update -y
+    4  spt update -y
+    5  apt update -y
+    6  vi /etc/netplan/00-installer-config.yaml
+    7  reboot now
+    8  apt-getr update -y
+    9  apt-get update -y
+   10  apt-get upgrade -y
+   11  apt-get autoremove
+   12  shutdown now
+   13  ip a
+   14  ping 8.8.8.8
+   15  vim /etc/netplan/00-installer-config.yaml
+   16  reboot now
+   17  vim /etc/hosts
+   18  reboot now
+   19  vim /etc/hosts
+   20  ping salt
+   21  ping app01
+   22  ping db-users
+   23  curl -L https://bootstrap.saltproject.io -o bootstrap_salt.sh
+   24  sh bootstrap_salt.sh -P -M
+   25  clear
+   26  salt-key -F
+   27  systemctl status salt-master.service
+   28  systemctl status salt-minion.service
+   29  salt-call --local key.finger
+   30  salt-key -F
+   31  vim /etc/salt/minion
+   32  salt-key -a salt
+   33  salt-key -F
+   34  salt-key -a app01
+   35  salt-key -a db-users
+   36  salt-key -F
+   37  salt '*' test.ping
+   38  cat /etc/hosts
+   39  hostnamectl set-hostname salt
+   40  ip a
+   41  salt-key -L
+   42  salt-key -F
+   43  salt-key -a "D*"
+   44  salt 'D*' test.ping
+   45  salt 'D*' pkg.install nginx
+   46  salt 'D*' sys.doc
+   47  salt 'D*' sys.list_modules
+   48  salt 'D*' sys.list_functions
+   49  salt 'D*' sys.list_functions user
+   50  salt 'D*' sys.list_functions user.add
+   51  salt 'D*' sys.doc user.add
+   52  salt '*' shadow.gen_password 'Welcome@12345'
+   53  salt "D*" user.add selvam1 password='Welcome@12345' groups="Administrators"
+   54* salt "D*" user.add cmd.run 'ls c:\'give
+   55  salt "D*" pkg.installed chrome
+   56  salt "D*" pkg.install chrome
+   57  salt "D*" pkg.install chocolotey
+   58  salt 'D*' sys.doc pkg.install
+   59  salt 'D*' sys.doc pkg.installed
+   60  salt-key -F
+   61  salt-key -d 'DE*'
+   62  clear
+   63  salt-key -F
+   64  ip a
+   65  salt-key -F
+   66  systemctl restart salt-master.service
+   67  salt-key -F
+   68  salt-key -a "F*"
+   69  salt 'F'test.ping
+   70  salt 'F' test.ping
+   71  salt '*' test.ping
+   72  salt 'app01' cmd.run 'ls /home/ubuntu'
+   73  salt 'app01' cmd.run 'ls'
+   74  salt 'app01' cmd.run 'ls /root'
+   75  salt app01 cmd.run 'ls /root'
+   76  salt 'a*' cmd.run 'ls /root'
+   77  salt 'a*,d*' cmd.run 'ls /root'
+   78  salt 'app01,db-users' cmd.run 'ls /root'
+   79  salt "app01,db-users" cmd.run 'ls /root'
+   80* salt "a
+   81  salt -E '(app*|db-*)' test.ping
+   82  salt '*' test.ping
+   83  salt salt test.ping
+   84  salt 'salt' test.ping
+   85  clear
+   86  salt app01 sys.list_modules
+   87  salt-key -F
+   88  salt 'F3*' sys.list_modules
+   89* salt app01
+   90* salt -E '(app*|db-*)' sys.list_modules &&
+   91  salt app01 sys.list_modules
+   92  salt app01 sys.list_functions test
+   93  salt "*" sys.list_functions testsalt app01 sys.list_functions test
+   94*
+   95* salt app01 sys.list_functions test
+   96  salt "*" sys.list_functions test
+   97  salt app01 sys.doc test
+   98  salt app01 sys.doc test.ping
+   99  salt '*' test.ping
+  100  salt app01 list_modules
+  101  salt app01 sys.list_modules
+  102* salt app0
+  103  salt app01 cmd.run 'whoami'
+  104  salt app01 cmd.run 'pwd'
+  105  salt app01 cmd.run 'ls -la /root'
+  106  salt app01 cmd.run 'ls -la /home'
+  107  salt app01 cmd.run 'ls -la /home/ubuntu'
+  108  salt app01 sys.list_functions file
+  109  salt app01 sys.doc file
+  110  salt app01 sys.doc file.touch
+  111  salt app01 file.touch /home/ubuntu/karthick.txt
+  112  salt app01 cmd.run 'ls -la /home/ubuntu'
+  113  salt app01 cmd.run 'ls -l /home/ubuntu'
+  114  salt app01 sys.doc file.append
+  115  salt app01 file.appen /home/ubuntu/karthick.txt "Hi Welcome all"
+  116  salt app01 file.append /home/ubuntu/karthick.txt "Hi Welcome all"
+  117  salt app01 cmd.run 'cat /home/ubuntu/karthick.txt'
+  118  salt app01 file.append /home/ubuntu/karthick.txt "Hi Welcome all"
+  119  salt app01 cmd.run 'cat /home/ubuntu/karthick.txt'
+  120  salt app01 file.append /home/ubuntu/karthick.txt "Hi Welcome all"
+  121  salt app01 cmd.run 'cat /home/ubuntu/karthick.txt'
+  122  "With all thine offerings thou shalt offer salt." \
+  123  salt app01 file.append /home/ubuntu/karthick.txt "With all thine offerings thou shalt offer salt."                         "Salt is what makes things taste bad when it isn't in them."
+  124  salt app01 cmd.run 'cat /home/ubuntu/karthick.txt'
+  125  salt app01 sys.doc file
+  126  history
+  127  salt app01 cmd.run 'ls -l /home/ubuntu'
+  128  salt app01 sys.doc file.chown
+  129  salt app01 file.chown /home/ubuntu/karthick.txt ubuntu
+  130  salt app01 file.chown /home/ubuntu/karthick.txt ubuntu root
+  131  salt app01 cmd.run 'ls -l /home/uubuntu'
+  132  salt app01 cmd.run 'ls -l /home/ubuntu'
+  133  salt app01 file.chown /home/ubuntu/karthick.txt ubuntu root
+  134  salt app01 file.chown /home/ubuntu/karthick.txt ubuntu ubuntu
+  135  salt app01 cmd.run 'ls -l /home/ubuntu'
+  136  salt app01 sys.doc file.chown
+  137  salt app01 cmd.run 'ls -l /home/ubuntu'
+  138* salt app01 file.chown /home/ubunt
+  139  salt app01 sys.doc file.chmod
+  140  salt app01 sys.doc file
+  141  salt app01 sys.doc file.chmod
+  142  salt app01 file.chmod /home/ubuntu/karthick.txt mode=700
+  143  slat app01 sys.doc file.touch
+  144  salt app01 sys.doc file.touch
+  145  salt app01 test.ping
+  146  salt app01 sys.doc test.ping
+  147  salt app01 sys.doc test
+  148  salt app01 sys.doc test | grep chown
+  149  salt app01 sys.doc test | grep mode
+  150  salt app01 sys.doc file
+  151  salt app01 sys.doc file | grep chmod
+  152  salt app01 sys.doc file | grep mode
+  153  salt app01 sys.doc file.set_mode
+  154  salt app01 file.set_mode /home/ubuntu/karthick.txt 0700
+  155  salt app01 cmd.run 'ls -l /home/ubuntu'
+  156  salt app01 file.set_mode /home/ubuntu/karthick.txt 0777
+  157  salt app01 cmd.run 'ls -l /home/ubuntu'
+  158  salt 'F*' cmd.run 'ls -l /home/ubuntu'
+  159  salt 'F*' cmd.run 'pwd'
+  160  salt 'F*' cmd.run 'dir'
+  161  salt 'F*' cmd.run 'whoami'
+  162  salt 'F*' file.touch 'C:\Users\demo.txt'
+  163  salt 'F*' cmd.run 'dir C:\Users'
+  164  salt 'F*' cmd.run 'dir C:\Users\Karthick Selvam '
+  165  salt 'F*' cmd.run 'dir C:\Users\Karthick Selvam'
+  166  salt 'F*' cmd.run 'dir C:\Users\'Karthick Selvam''
+  167  clear
+  168  salt app01 sys.doc file
+  169  salt app01 sys.doc file | grep copy
+  170  salt app01 sys.doc file.copy
+  171  salt app01 file.copy /home/ubuntu/karthick.txt /root/karthick.txt
+  172  salt app01 cmd.run 'ls /root'
+  173  salt app01 cmd.run 'cat /root/karthick.txt'
+  174  salt app01 cmd.run 'mkdir /root/salt'
+  175  salt app01 cmd.run 'ls /root'
+  176  salt app01 cmd.run 'ls -la /root'
+  177  salt app01 cmd.run 'mv /root/karthick.txt /root/salt'
+  178  salt app01 cmd.run 'ls -la /root/salt'
+  179  salt app01 cmd.run 'ls -la /home/ubuntu'
+  180  salt app01 sys.doc file.copy
+  181  salt app01 file.copy /root/salt /home/ubuntu recurse=True
+  182  salt app01 cmd.run 'ls -la /home/ubuntu'
+  183  salt app01 file.copy /root/salt/ /home/ubuntu/ recurse=True
+  184  salt app01 cmd.run 'ls -la /home/ubuntu'
+  185  salt app01 cmd.run 'ls -la /home/ubuntu/salt'
+  186  salt app01 cmd.run 'ls -la /root/salt'
+  187  salt app01 file.copy /root/salt/ /home/ubuntu recurse=True
+  188  salt app01 file.copy /root/salt/ /home/ubuntu
+  189  salt app01 file.copy /root/salt/ /home/ubuntu recurse=True
+  190  salt app01 cmd.run 'ls  /root/salt'
+  191  salt app01 cmd.run 'ls /home/ubuntu'
+  192  salt app01 sys.doc | grep dir
+  193  salt app01 sys.doc | grep "dir copy"
+  194  salt app01 sys.doc | grep "copy"
+  195  clear
+  196  salt-key -L
+  197  salt 'F3*' cmd.run 'dir'
+  198  salt 'F3*' file.touch 'C:\demo\karthick.txt'
+  199  salt 'F3*' file.touch 'C:\demo\karthick1.txt'
+  200  salt app01 file.copy /root/salt /root/salt1 recurse=True
+  201  salt app01 file.copy /root/salt /root/salt2 recurse=True
+  202  salt app01 file.copy /root/salt /root/karthick recurse=True
+  203  ls
+  204  clear
+  205  salt app01 sys.doc | grep move
+  206  salt app01 sys.doc file.move
+  207  salt app01 file.move /root/salt/karthick.txt /root/salt/selvam.txt
+  208  salt app01 sys.doc file.rename
+  209  salt app01 file.rename /root/salt /root/selvam
+  210  salt app01 sys.doc file.mkdir
+  211  salt app01 sys.doc file.mkdirs
+  212  salt app01 sys.doc file | grep dir
+  213  clear
+  214  salt app01 sys.list_modules
+  215  salt app01 sys.list_modules | grep user
+  216  salt app01 sys.list_functions user
+  217  salt app01 user.list_users
+  218  salt app01 sys.list_functions user
+  219  salt app01 user.list_groups
+  220  salt app01 sys.doc user.list_groups
+  221  salt app01 user.list_groups root
+  222  salt app01 user.list_groups sudo
+  223  salt app01 user.list_groups root
+  224  salt app01 user.list_groups ubuntu
+  225  salt app01 user.list_groups salt
+  226  salt app01 sys.list_functions user
+  227  salt app01 user.info ubuntu
+  228  salt app01 user.info salt
+  229  salt app01 sys.list_functions user
+  230  salt 'F*' user.list_users
+  231  salt app01 user.info Administrator
+  232  salt app01 user.info Guest
+  233  salt app01 user.info Karthick Selvam
+  234  salt app01 user.info 'Karthick Selvam'
+  235  clear
+  236  salt app01 sys.list_functions user
+  237  salt app01 sys.doc user.add
+  238  salt app01 user.add karthick home=/home/karthick shell=/bin/bash
+  239  salt app01 user.info karthick
+  240  salt app01 user.add karthick1 shell=/bin/bash
+  241  salt app01 user.info karthick1
+  242  salt app01 user.add karthick2 home=/home/karthick10 shell=/bin/bash
+  243  salt app01 user.info karthick2
+  244  salt app01 user.add karthick4
+  245  salt app01 sys.doc shadow
+  246  salt app01 sys.doc shadow_gen_password
+  247  salt app01 sys.doc shadow.gen_password
+  248  salt app01 sys.doc shadow.set_password
+  249  salt app01 shadow.gen_password 'Welcome!12345'
+  250  salt app01 shadow.set_password karthick '$6$LdeHV4T3f1sigy4Q$eue4QnCwWKt5kJ7Zbc5YyV5KyBQ/f3yAfxCCPmnpB84mD3K4HP9W6/nJrywlnfYorkVJiWu2ItD/pjStIvMyW/'
+  251  history
+  252  salt-key -F
+  253  salt-key -a DESKTOP-D2S283D
+  254  history | grep administrator
+  255  history | grep administrators
+  256  clear
+  257  salt 'DE*' test.ping
+  258  salt 'DE*' user.add demo welcome
+  259  salt 'DE*' user.add demo1 welcome groups="Administrator"
+  260  salt 'DE*' user.add demo1 welcome groups="Administrators"
+  261  salt 'DE*' user.add demo2 welcome groups="Administrators"
+  262  salt app01 sys.doc group
+  263  salt app01 sys.doc group.add
+  264  salt app01 sys.doc group.adduser
+  265  salt-key -F
+  266  salt-key -d "DE*"
+  267  salt-key -d "F3*'
+  268  salt-key -d "F3*"
+  269  clear
+  270  salt-key -F
+  271  salt '*' pkg.install apache2
+  272  salt '*' pkg.install httpd
+  273  clear
+  274  salt app01 sys.list_modules
+  275  salt app01 sys.list_functions pkg
+  276  salt app01 sys.doc pkg.version
+  277  salt app01 sys.doc pkg.version apache2
+  278  salt app01 pkg.version apache2
+  279  salt app01 pkg.version mysql
+  280  salt app01  pkg.upgrade_available
+  281  salt app01  pkg.upgrade_available apache2
+  282  salt sys.doc pkg.upgrade_available
+  283  salt app01 sys.doc pkg.upgrade_available
+  284  salt app01  pkg.upgrade_available python
+  285  salt app01  pkg.upgrade_available python3
+  286  salt app01  pkg.upgrade_available python3-pip
+  287  salt app01 sys.doc pkg.upgrade
+  288  salt app01 pkg.upgrade
+  289* salt app01
+  290  salt app01 sys.doc pkg | grep upgrade
+  291  salt app01 pkg.install python3-pip
+  292  apt-get install python3-pip
+  293  salt app01 pkg.install apache2
+  294  salt app01 pkg.install vim
+  295  salt app01 pkg.install nano
+  296* salt app01 pkg.remove
+  297  salt app01 pkg.install nginx
+  298  salt-key -F
+  299  salt-key -a outdated-Pc
+  300  salt-key -F
+  301  salt outdated-Pc pkg.upgrade
+  302  salt app01 sys.doc pkg
+  303  salt app01 sys.doc pkg.remove
+  304  salt "out*" pkg.install pkgs=["vim","docker","emacs"]
+  305  salt "out*" pkg.remove pkgs=["vim","docker","emacs"]
+  306  salt "out*" sys.doc pkg.repo
+  307  salt "out*" sys.doc pkg | grep repo
+  308  salt "out*" sys.doc pkg | grep update
+  309  salt outdated-Pc pkg.upgrade refresh-True
+  310  salt outdated-Pc pkg.upgrade refresh=True
+  311  salt outdated-Pc pkg.list_repos
+  312  salt app01 sys.list_modules
+  313  salt app01 sys.list_functions service
+  314  salt app01 pkg.install nginx
+  315* salt app01 pkg.remove
+  316  salt app01 pkg.install apache2
+  317  salt app01 service.status apache2
+  318  salt app01 service.start apache2
+  319  salt app01 service.status apache2
+  320  salt app01 service.restart apache2
+  321  salt app01 service.enable apache2
+  322  salt app01 sys.list_functions service
+  323  salt app01 sys.doc service.firstboot
+  324  salt app01 sys.doc service.get_all
+  325  salt app01 service.get_all
+  326  history
+  327  clear
+  328  salt-key -L
+  329  salt outdated-Pc network.interfaces
+  330  salt outdated-Pc network.ip_addrs ens34 10.0.7.140/24
+  331  salt outdated-Pc network.interfaces
+  332  salt outdated-Pc sys.doc network.ip_addrs
+  333  salt outdated-Pc sys.doc network
+  334  salt outdated-Pc network.ip_addrs ens34 10.0.7.140
+  335  salt outdated-Pc network.ip_addrs ens34 10.0.7.140/24
+  336  salt-key -F
+  337  salt outdated-Pc test.ping
+  338  salt outdated-Pc network.ip_addrs ens34 10.0.7.140/24
+  339  salr app01 sys.network.ip_addrs
+  340  salt app01 sys.network.ip_addrs
+  341  salt app01 sys.doc network.ip_addrs
+  342  salt '*' network.ip_addrs
+  343  salt '*' sys.doc network
+  344  salt '*' sys.doc network | grep static
+  345  salt '*' sys.doc network.managed
+  346  salt '*' sys.doc network.manage
+  347  salt '*' sys.doc network
+  348  salt '*' sys.doc network | grep manage
+  349  salt '*' list_functions network
+  350  salt app01 sys.list_functions network
+  351  salt app01 sys.doc network.interface_ip
+  352  salt app01 sys.doc network.interface
+  353  salt app01 sys.doc network.ipaddrs
+  354* salt '*' list_functions
+  355* salt app01 sys.list_functions net
+  356  salt app01 sys.doc network.ip_networks
+  357  salt app01 sys.doc network.mod_hostname
+  358  salt-key -F
+  359  salt outdated-Pc network.mod_hostname karthick
+  360  salt-key -F
+  361  systemctl restart salt-master.service
+  362  salt-key -F
+  363  systemctl restart salt-master.service
+  364  salt-key -F
+  365  salt-key -d outdated-Pc
+  366  salt-key -a karthick
+  367  salt karthick test.ping
+  368  salt karthick sysllist_functions netork
+  369  salt karthick sysllist_functions network
+  370  salt karthick sys.list_functions network
+  371  salt karthick network.ping host=8.8.8.8
+  372  salt karthick network.netstat
+  373  clear
+  374  salt karthick firewalld.list_service
+  375  salt karthick sys.doc system
+  376  salt karthick sys.list_functions system
+  377  salt karthick network.traceroute google.com
+  378  salt karthick sys.list_functions network
+  379  salt karthick sys.doc network.traceroute
+  380  salt karthick network.traceroute archlinux.org
+  381  salt karthick pkg.install tracert
+  382  salt karthick pkg.install traceroute
+  383  salt karthick network.traceroute archlinux.org
+  384  salt karthick network.traceroute google.com
+  385  clear
+  386  salt app01 grains.ls
+  387  salt app01 grains.items
+  388  salt app01 grains.items os
+  389  salt db-users grains.items
+  390  salt app01 grains.items os
+  391  salt -G'osos_family:'
+  392  salt -G 'os_family:Debian' test.ping
+  393  salt -G 'os_family:Redhat' test.ping
+  394  salt app01 grains.ls
+  395  salt app01 grains.items
+  396  salt -G 'os_family:Debian' test.ping
+  397  salt -G 'os_family:Redhat' test.ping
+  398  systemctl restart salt-master.service
+  399  salt -G 'client:cognizant' test.ping
+  400  salt app01 grains.itemm
+  401  salt app01 grains.item
+  402  salt app01 grains.items
+  403  salt -G 'client:cognizant' test.ping
+  404  salt app01 saltutil.refersh_grains
+  405  salt app01 saltutil
+  406  salt app01  saltutil.sync_grains
+  407  salt app01 saltutil.sync_grains
+  408  salt -G 'client:cognizant' test.ping
+  409  systemctl restart salt-master.service
+  410  salt app01 grains.items
+  411  salt -G 'client:congnizant' test.ping
+  412  salt app01 saltutil.sync_grains
+  413  salt app01 grains.items
+  414  salt -G 'client:congnizant and env:prod' test.ping
+  415  salt -G 'client:cognizant and env:prod' test.ping
+  416  systemctl restart salt-master.service
+  417  salt -G 'client:cognizant and env:prod' test.ping
+  418  salt app01 saltutil.sync_grains
+  419  systemctl restart salt-master.service
+  420  salt -G 'client:cognizant and env:prod' test.ping
+  421  salt -G 'client:cognizant' test.ping
+  422  salt -G 'dev:prod' test.ping
+  423  salt -G 'env:prod' test.ping
+  424  salt -G 'client:cognizant && env:prod' test.ping
+  425  salt -G 'client:cognizant and env:prod' test.ping
+  426  salt -G 'client:cognizant' and 'env:prod' test.ping
+  427  salt -G 'client:cognizant and env:prod' test.ping
+  428  history
+  429  salt -G 'client:cognizant and env:prod' test.ping
+  430  salt -G 'os:Ubuntu and os_family:Debian' test.ping
+  431  clear
+  432  cd /etc/salt/master.d/
+  433  vim node.conf
+  434  salt db-users grains.items
+  435  vim node.conf
+  436  systemctl restart salt-master.service
+  437  salt -N prod-ubuntu test.ping
+  438  salt -N dev-ubuntu test.ping
+  439  salt -N db-cent test.ping
+  440  cat node.conf
+  441  salt -G 'os:Ubuntu and os_family:Debian' test.ping
+  442  salt -G 'os:Ubuntu,os_family:Debian' test.ping
+  443  salt -G
+  444  cat node.conf
+  445  history
